@@ -1,6 +1,9 @@
 import 'package:example/advanced/advanced_example.dart';
+import 'package:example/advanced_grid/advanced_example.dart';
 import 'package:example/simple/simple_example.dart';
+import 'package:example/simple_grid/simple_example.dart';
 import 'package:example/sliver/sliver_example.dart';
+import 'package:example/sliver_grid/sliver_example.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -33,7 +36,18 @@ class Example extends StatelessWidget {
             onTap: () => Navigator.of(context).push(SimpleExample.route()),
             title: const Text('Simple Example'),
             subtitle: const Text(
-              'A simple example that uses an Infinite List '
+              'A simple  example that uses an Infinite List '
+              'in a StatefulWidget.',
+            ),
+            trailing: const Icon(Icons.chevron_right),
+          ),
+          const Divider(),
+          ListTile(
+            isThreeLine: true,
+            onTap: () => Navigator.of(context).push(SimpleGridExample.route()),
+            title: const Text('Simple Grid Example'),
+            subtitle: const Text(
+              'A simple grid example that uses an Infinite List '
               'in a StatefulWidget.',
             ),
             trailing: const Icon(Icons.chevron_right),
@@ -52,12 +66,36 @@ class Example extends StatelessWidget {
           const Divider(),
           ListTile(
             isThreeLine: true,
+            onTap: () =>
+                Navigator.of(context).push(AdvancedGridExample.route()),
+            title: const Text('Advanced Grid Example'),
+            subtitle: const Text(
+              'An advanced example that uses an Infinite Grid List '
+              'in combination with a Cubit from the Bloc package.',
+            ),
+            trailing: const Icon(Icons.chevron_right),
+          ),
+          const Divider(),
+          ListTile(
+            isThreeLine: true,
             onTap: () {
               Navigator.of(context).push(SliverExample.route());
             },
             title: const Text('Sliver Example'),
             subtitle: const Text(
               'An example in a sliver',
+            ),
+            trailing: const Icon(Icons.chevron_right),
+          ),
+          const Divider(),
+          ListTile(
+            isThreeLine: true,
+            onTap: () {
+              Navigator.of(context).push(SliverGridExample.route());
+            },
+            title: const Text('Sliver Grid Example'),
+            subtitle: const Text(
+              'An example in a sliver grid',
             ),
             trailing: const Icon(Icons.chevron_right),
           ),
